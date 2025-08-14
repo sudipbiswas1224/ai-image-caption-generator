@@ -10,12 +10,10 @@ const { registerController, loginController } = require('../controllers/auth.con
 /user
  */
 
-router.post('/register', async(req, res)=>{
-    await registerController(req, res);
-})
 
-router.post('/login', async(req, res)=>{
-    await loginController(req, res);
-})
+router.post('/register',registerController);
+
+router.post('/login',loginController);
+
 
 module.exports = router;

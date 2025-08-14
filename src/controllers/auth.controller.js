@@ -19,7 +19,7 @@ async function registerController(req, res) {
         password: await bcryptjs.hash(password, 10) // Hashing the password
     });
     //generating the token
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     //generating the cookie
     res.cookie('token', token);
     res.status(201).json({
